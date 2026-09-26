@@ -1,23 +1,70 @@
 aid: arris-composites
+
 name: Arris Composites
-description: 'Arris Composites is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Arris Composites is a Berkeley‑based advanced manufacturing company that develops high‑performance, lightweight carbon‑fiber composite structures using its patented Additive Molding technology. Founded in 2017, it serves aerospace, defense, consumer products, cycling and other industries with sustainable, high‑strength parts at scale.'
+
 url: https://raw.githubusercontent.com/api-evangelist/arris-composites/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
 - Company
-apis: []
+- Manufacturing
+- Composites
+- AdditiveMolding
+- AdvancedMaterials
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: WellKnown
+  url: well-known/arris-composites-well-known.yml
+- type: Hosts
+  url: hosts/arris-composites-hosts.yml
+- type: Vendors
+  url: vendors/arris-composites-vendors.yml
+- type: TermsOfService
+  url: https://arriscomposites.com/terms-conditions/
+- type: PrivacyPolicy
+  url: https://arriscomposites.com/privacy-policy/
+- type: Newsroom
+  url: https://arriscomposites.com/about/media/
+- type: DomainSecurity
+  url: security/arris-composites-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://arriscomposites.com/
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: The company site is built with Webflow and returns HTML shells for typical spec URLs, providing no machine‑readable API contracts.
+  evidence:
+    - url: https://arriscomposites.com/openapi.json
+      status: 404
+    - url: https://arriscomposites.com/.well-known/oauth-protected-resource
+      status: 301
+  checked: 2026-09-26
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
